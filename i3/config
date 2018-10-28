@@ -237,3 +237,4 @@ exec_always --no-startuo-id synclient MaxSpeed=7.5
 
 #Network Manager
 exec nm-applet
+
