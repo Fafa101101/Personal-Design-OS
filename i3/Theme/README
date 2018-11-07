@@ -1,1 +1,14 @@
 Themes based on: https://github.com/unix121/i3wm-themer.git
+
+Requests:
+
+    Python 3
+    i3-gaps
+    Polybar
+    Rofi
+    Font-Awesome-5
+    Nitrogen
+    nerd-fonts-complete
+    Adobe Source Code Pro font
+    rxvt-unicode
+
