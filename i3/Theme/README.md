@@ -1,6 +1,6 @@
 Themes based on: https://github.com/unix121/i3wm-themer.git
 
-Requests:
+# Requests:
 
     Python 3
     i3-gaps
