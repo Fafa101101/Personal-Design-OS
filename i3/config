@@ -35,6 +35,12 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
+#Start Firefox
+bindsym $mod+Shift+f exec firefox
+
+# Power Settings
+bindsym $mod+Shift+n exec shutdown now
+
 # start rofi (a program launcher)
 
 bindsym $mod+d exec dmenu_run 
@@ -96,8 +102,8 @@ bindsym $mod+a focus parent
 set $workspace1 "1 "
 set $workspace2 "2 "
 set $workspace3 "3 "
-set $workspace4 "4 "
-set $workspace5 "5"
+set $workspace4 "4 "
+set $workspace5 "5 "
 set $workspace6 "6"
 set $workspace7 "7"
 set $workspace8 "8"
@@ -223,18 +229,22 @@ bindsym XF86AudioPrev exec playerctl previous
 #Extra configurations in order to make i3WM work as configurated
 #exec_always --no-startup-id synclient /etc/X11/xorg.conf.d/70-synaptics.conf
 exec spotify
-exec_always feh --bg-fill /home/fabricio-ubuntu/Pictures/wallpaperdonotrenameit.png
+exec_always feh --bg-fill /home/fabricio-ubuntu/Pictures/macos-mojave-night-mode-stock-0y-1280x1024.jpg
 exec firefox
 exec gnome-terminal
 exec_always compton
 
+
 #TouchPad Configurations
-exec_always --no-startup-id synclient VertScrollDelta=-111
-exec_always --no-startuo-id synclient HorizScrollDelta=-111
-exec_always --no-startuo-id synclient AccelFactor=0.03
-exec_always --no-startuo-id synclient MinSpeed=4.5
-exec_always --no-startuo-id synclient MaxSpeed=7.5
+exec_always synclient VertScrollDelta=-111
+exec_always synclient HorizScrollDelta=-111
+exec_always synclient AccelFactor=0.03
+exec_always synclient MinSpeed=3
+exec_always synclient MaxSpeed=6
+exec_always synclient HorizTwoFingerScroll=1
+exec_always synclient CoastingSpeed=0
 
 #Network Manager
 exec nm-applet
+
 
