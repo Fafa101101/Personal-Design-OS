@@ -42,8 +42,10 @@ bindsym $mod+Shift+f exec firefox
 bindsym $mod+Shift+n exec shutdown now
 
 # start rofi (a program launcher)
+bindsym $mod+d exec --no-startup-id rofi -show run
 
-bindsym $mod+d exec dmenu_run 
+# Start dmenu (i3)
+#bindsym $mod+d exec dmenu_run 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -192,21 +194,26 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 hide_edge_borders both
 
 
+#PolyBar Start
+#exec_always --no-startup-id polybar i3wmthemer_bar
+exec_always --no-startup-id ~/.config/polybar/i3wmthemer_bar_launch.sh
+
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-    status_command i3blocks -c /home/fabricio-ubuntu/.config/i3/i3blocks.conf
+#bar {
+ #   status_command i3blocks -c /home/fabricio-ubuntu/.config/i3/i3blocks.conf
+#colors 
+#{
+#		background $bg-color
+#	    	separator #757575
+#		#                  border             background         text
+#		focused_workspace  $bg-color          $bg-color          $text-color
+#		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+#		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+#}
 
-colors {
-		background $bg-color
-	    	separator #757575
-		#                  border             background         text
-		focused_workspace  $bg-color          $bg-color          $text-color
-		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
-}
 
-}
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
@@ -214,9 +221,8 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #d
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
-
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20 # decrease screen brightness
 # Touchpad controls
 bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
 
@@ -229,7 +235,7 @@ bindsym XF86AudioPrev exec playerctl previous
 #Extra configurations in order to make i3WM work as configurated
 #exec_always --no-startup-id synclient /etc/X11/xorg.conf.d/70-synaptics.conf
 exec spotify
-exec_always feh --bg-fill /home/fabricio-ubuntu/Pictures/macos-mojave-night-mode-stock-0y-1280x1024.jpg
+exec_always feh --bg-fill /home/fabricio-ubuntu/Pictures/proxy.duckduckgo22.com.jpeg
 exec firefox
 exec gnome-terminal
 exec_always compton
@@ -244,7 +250,17 @@ exec_always synclient MaxSpeed=6
 exec_always synclient HorizTwoFingerScroll=1
 exec_always synclient CoastingSpeed=0
 
+
+
+
 #Network Manager
 exec nm-applet
+
+# Gaps
+gaps inner 10
+gaps outer -4
+smart_gaps on
+
+
 
 
