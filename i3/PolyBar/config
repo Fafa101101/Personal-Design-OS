@@ -1,8 +1,8 @@
 [bar/i3wmthemer_bar]
 width = 100%
-height = 24
+height = 22
 radius = 0
-fixed-center = false
+fixed-center = true
 
 background = #272827
 foreground = #657b83
